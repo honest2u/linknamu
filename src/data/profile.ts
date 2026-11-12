@@ -7,11 +7,11 @@ export type LinkItem = {
 };
 
 export const profile = {
-  name: "GS",
-  bio: "자기소개 칸",
+  name: "박인프라",
+  bio: "개발이란것을 해보고 있습니다. | 계속 해보고 싶습니다.",
   // public/ 폴더에 이미지를 넣고 경로를 적으세요. 예: "/profile.jpg"
   // 비워두면 이름 첫 글자로 된 기본 아바타가 표시됩니다.
-  image: "",
+  image: "/profile.svg",
 };
 
 export const links: LinkItem[] = [

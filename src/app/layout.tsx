@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+// Pretendard: 한글을 글자 묶음 단위로 쪼갠 버전이라 화면에 쓰인 글자만 내려받음
+import "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css";
 import "./globals.css";
 import { profile } from "@/data/profile";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
 
 export const metadata: Metadata = {
   title: `${profile.name} | 링크나무`,
@@ -33,9 +28,8 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body
-        className={`${geistSans.variable} bg-white text-neutral-900 antialiased transition-colors dark:bg-neutral-950 dark:text-neutral-100`}
-      >
+      <body>
+        <div aria-hidden className="warm-backdrop fixed inset-0 -z-10" />
         {children}
       </body>
     </html>

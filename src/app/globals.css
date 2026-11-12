@@ -2,7 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: var(--font-geist-sans), -apple-system, "Apple SD Gothic Neo",
-    "Noto Sans KR", sans-serif;
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-[#fdf8f1] font-sans text-stone-800 antialiased dark:bg-[#1a1512] dark:text-stone-100;
+    word-break: keep-all;
+  }
+}
+
+/* 따뜻한 톤 배경: 화면에 고정해 스크롤해도 그라데이션이 끊기지 않게 함 */
+.warm-backdrop {
+  background:
+    radial-gradient(120% 60% at 50% 0%, rgba(255, 255, 255, 0.7), transparent 60%),
+    linear-gradient(165deg, #fdf8f1 0%, #fcefe3 50%, #f9dfcc 100%);
+}
+
+.dark .warm-backdrop {
+  background:
+    radial-gradient(120% 60% at 50% 0%, rgba(255, 196, 150, 0.08), transparent 60%),
+    linear-gradient(165deg, #1a1512 0%, #221a16 50%, #2b1f19 100%);
 }

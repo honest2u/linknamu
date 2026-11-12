@@ -11,16 +11,16 @@ export default async function Home() {
   const counts = await getClickCounts();
 
   return (
-    <main className="mx-auto flex min-h-screen w-full max-w-md flex-col px-4 py-6">
+    <main className="mx-auto flex min-h-dvh w-full max-w-[440px] flex-col px-7 pb-10 pt-6 sm:px-8 sm:pt-10">
       <div className="flex justify-end">
         <ThemeToggle />
       </div>
 
-      <div className="mt-6">
+      <div className="mt-4 sm:mt-6">
         <Profile name={profile.name} bio={profile.bio} image={profile.image} />
       </div>
 
-      <ul className="mt-10 flex flex-col gap-6">
+      <ul className="mt-12 flex flex-col gap-4 sm:gap-5">
         {links.map((link) => (
           <li key={link.id}>
             <LinkCard link={link} initialCount={counts[link.id] ?? 0} />
@@ -28,7 +28,7 @@ export default async function Home() {
         ))}
       </ul>
 
-      <footer className="mt-auto pt-12 text-center text-xs text-neutral-400">
+      <footer className="mt-auto pt-16 text-center text-[11px] font-medium tracking-[0.2em] text-stone-400 dark:text-stone-500">
         링크나무
       </footer>
     </main>
